@@ -11,13 +11,11 @@
           - @group.group_users.each do |group_user|
             = group_user.user.name
     .chat-main_header_right
-      .chat-main_header_right_button
-        %a.right-header__button
-          = link_to edit_group_path(@group.id) do
-            Edit
+      = link_to "/groups/#{@group[:id]}/edit" ,class: "chat-main_header_right_button" do
+        Edit
   
-  .messages
-  = render @messages
+  .chat-main_message
+    = render @messages
   
   .chat-main_form
     = form_for [@group, @message] do |f|

@@ -6,7 +6,7 @@
    .chat-side_header_top_icons-edit
     = link_to new_group_path ,class: "link" do
      = icon('fas', 'edit')
-    = link_to edit_user_path(current_user) do
+    = link_to edit_user_path(current_user) ,class: "link" do
      = icon('fas', 'cog', class: 'icon')
 
  .chat-side_groups

@@ -39,7 +39,6 @@
    }
     &_groups_chat-group{
       padding: 20px;
-      margin-bottom: 40px;
     }
 
      &_groups_chat-group_name{
@@ -50,7 +49,7 @@
     
      &_groups_chat-group_message{
       font-size: 11px;
-      color: #ffffff;      
+      color: #ffffff;
      }
 }
 
@@ -84,6 +83,7 @@
           font-size: 12px;
           display: flex;
           margin-top: 15px;
+          list-style: none;
         }
       }
     }
@@ -94,13 +94,14 @@
 
     &_header_right_button{
     border: 1px solid  #38AEF0;
-    color: #38AEF0;
+    color: #38aef0;
     float: right;
     height: 40px;
     line-height: 40px;
     margin-top: 28px;
     padding: 0 20px;
     justify-content: flex-end;
+    text-decoration: none;
     }
 
   &_message{
@@ -108,7 +109,8 @@
     box-sizing: border-box;
     height: calc(100vh - 190px);
     width: calc(100vw - 300px);
-    padding: 46px 40px;
+    padding: 26px 20px;
+    overflow-y: scroll;
     }
 
    &_message_info{
@@ -182,6 +184,7 @@
 
   // }
 }
+
 
 .link{
   color:white;
