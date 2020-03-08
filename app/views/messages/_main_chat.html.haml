@@ -1,31 +1,31 @@
-.wrapper
- .chat-main
-  .chat-main_header
-   .chat-main_header_left
-    .chat-main_header_left_text
-     test
-    .chat-main_header_left_member
-     Member:tatsunori
-   .chat-main_header_right
-    .chat-main_header_right_button
-     Edit
-  .chat-main_message
-   .chat-main_message_info
-    .chat-main_message_info_user-name
-     kawai
-    .chat-main_message_info_date
-     2020/01/01
-   .chat-main_message_info_contents
-    aiueo
-    
-  .chat-main_form
-   %form.new_message
-    .chat-main_form_box-left
-     %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-      .image
-       %label{class: "input-box__image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "input-box__image__file"}
-     .chat-main_form_submit
-      %input{type: "submit", class: "submit-btn"}
 
+.chat-main
+  .chat-main_header
+    .chat-main_header_left
+      .chat-main_header_left_text
+        = @group.name
+        %ul.left-header__members
+      .chat-main_header_left_member
+        Member:
+        %li.member
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
+    .chat-main_header_right
+      .chat-main_header_right_button
+        %a.right-header__button
+          = link_to edit_group_path(@group.id) do
+            Edit
+  
+  .messages
+  = render @messages
+  
+  .chat-main_form
+    = form_for [@group, @message] do |f|
+      .chat-main_form_box-left
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .image
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image',class:'icon')
+            = f.file_field :image, class: 'hidden'
+        .chat-main_form_submit
+          = f.submit 'Send', class: 'form__submit'
