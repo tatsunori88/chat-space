@@ -3,6 +3,8 @@
 }
 .wrapper {
   display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 
 .chat-side {
@@ -36,9 +38,11 @@
     background-color: #2f3e51;
     width: 300px;
     height: calc(100vh - 100px);
+    overflow-y: scroll;
    }
     &_groups_chat-group{
       padding: 20px;
+      
     }
 
      &_groups_chat-group_name{
@@ -105,32 +109,36 @@
     }
 
   &_message{
-    background-color: #fafafa;
-    box-sizing: border-box;
     height: calc(100vh - 190px);
-    width: calc(100vw - 300px);
-    padding: 26px 20px;
+    background-color: #fafafa;
+    padding: 46px 40px;
     overflow-y: scroll;
+  }
+
+
+  &_message_date{
+    box-sizing: border-box;
+    padding-bottom: 40px;
     }
 
-   &_message_info{
+   &_message_date_info{
     padding: bottom 40px;
     display: flex;
    }
 
-    &_message_info_user-name{
+    &_message_date_info_user-name{
       color: #434a54;
       font-size: 16px;
       font-weight: bold;
     }
    
-    &_message_info_date{
+    &_message_date_info_date{
       color: #999999;
       font-size: 12px;
       margin-left: 10px;
     }
 
-    &_message_info_contents{
+    &_message_date_info_contents{
       color: #434a54;
       font-size: 14px;
       margin-bottom: 10px;
