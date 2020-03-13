@@ -60,8 +60,6 @@ $('#new_message').on('submit', function(e){
     $('form')[0].reset();
     $( ".form__submit").prop( "disabled", false );
     $('.chat-main_message').animate({ scrollTop: $('.chat-main_message')[0].scrollHeight},'fast');
-    $('.form__message').val('');
-    $('.hidden').val('');
   })
   .fail(function(){
           alert('"メッセージ送信に失敗しました"');
