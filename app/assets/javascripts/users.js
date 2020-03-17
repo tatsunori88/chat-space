@@ -37,6 +37,7 @@ $(function() {
       data: { keyword: input },
       dataType: "json"
     })
+
       .done(function(users) {
         $("#user-search-result").empty();
 
