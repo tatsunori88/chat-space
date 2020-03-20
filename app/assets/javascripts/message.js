@@ -42,6 +42,7 @@ $(function(){
 
 
   $('#new_message').on('submit', function(e){
+    console.log("new")
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -54,6 +55,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      console.log("done")
       var html = buildHTML(data);
       $('.chat-main_message').append(html);
       $('form')[0].reset();
