@@ -55,14 +55,25 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log("done")
-      var html = buildHTML(data);
-      $('.chat-main_message').append(html);
-      $('form')[0].reset();
-      $( ".form__submit").prop( "disabled", false );
-      $('.chat-main_message').animate({ scrollTop: $('.chat-main_message')[0].scrollHeight},'fast');
-    });
-  });
+      if ( data.content != undefined ){
+        console.log("done")
+        var html = buildHTML(data);
+        $('.chat-main_message').append(html);
+        $('form')[0].reset();
+        $( ".form__submit").prop( "disabled", false );
+        $('.chat-main_message').animate({ scrollTop: $('.chat-main_message')[0].scrollHeight},'fast');
+      }
+      else{
+        alert("メッセージを入力して下さい")
+      }
+    })
+    
+    .fail(function(data){
+      alert('エラーが発生したためメッセージは送信できませんでした。');
+    })
+  })
+
+  
 
     var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得

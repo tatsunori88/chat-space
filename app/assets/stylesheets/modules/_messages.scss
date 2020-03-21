@@ -42,18 +42,21 @@
    }
     &_groups_chat-group{
       padding: 20px;
-      
     }
 
      &_groups_chat-group_name{
       font-size: 15px;
       color: #ffffff;
       margin-bottom: 5px;
+      text-decoration:underline;
+      text-decoration-color: #2f3e51;
      }  
     
      &_groups_chat-group_message{
       font-size: 11px;
       color: #ffffff;
+      text-decoration:underline;
+      text-decoration-color: #2f3e51;
      }
 }
 
